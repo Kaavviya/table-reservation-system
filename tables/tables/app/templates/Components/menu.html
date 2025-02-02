@@ -1,0 +1,14 @@
+<div class="body">
+
+    <form class="menu-card" action="{{ url_for('process_form') }}" method="POST">
+        <label for="seats">Select Seat: </label>
+        <input type="number" name="seat_number" required>
+        <label>Name: </label>
+        <input type="text" name="name" required>
+        <label for="email">Email: </label>
+        <input type="email" name="email" required>
+        <label for="mobile">Mobile number: </label>
+        <input type="number" name="mobile" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+{% extends 'public/base/base.html' %}
+
+{% block title %}Reservations{% endblock %}
+
+{% block main %}
+    <div class="container mt-4">
+        <h1>Your Reservation</h1>
+        <div class="bg">
+            {% if reservation %}
+                <div class="col-md-6">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Reservation for {{ reservation[0][0] }}</h5>
+                            <h6 class="card-title">Email-address : {{ reservation[0][1] }}</h6>
+                            <h6 class="card-title">Mobile-Number: {{ reservation[0][2] }}</h6>
+                            <h6 class="card-text">Seats reserved: {{ reservation[1] }}</h6>
+                            <h6 class="card-text">Your bill: {{bill}}</h6>
+                            <br>
+                            <form action="{{ url_for('cancel_reservation') }}" method="POST">
+                                <input type="hidden" name="reservation_id" value="{{ ','.join(reservation[0]) }}">
+                                <input type="hidden" name="client_details" value="{{reservation}}">
+                                <button type="submit" class="btn btn-warning" style="background-color: #dec79b; border-color: #d2c7b4;">Cancel Reservation</button>
+                            </form>
+                            <br>
+                            <form action="{{ url_for('make_payment') }}" method="POST">
+                                <input type="hidden" name="total_bill" value="{{bill}}">
+                                <input type="hidden" name="detail" value="{{reservation[0][0]}}">
+                                <label>Payment Mode: </label>
+                                <select class = "form-control" name="mode" style="width: 190px;">
+                                    <option value="" disabled selected>Select payment mode</option>
+                                    <option value="cash">Cash</option>
+                                    <option value="upi">Upi</option>
+                                    <option value="card">Card</option>
+                                </select>
+                                <br>
+                                <button type="submit" class="btn btn-warning" style="background-color: #dec79b; border-color: #d2c7b4;">Make payment</button>
+                            </form>
+                            </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-md-6">
+                    <div class="alert alert-warning mt-3" role="alert">
+                        No reservation found.
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn btn-warning" style="background-color: #4ebbd6;">Reserve More Seats</a>
+    </div>
+{% endblock %}
+

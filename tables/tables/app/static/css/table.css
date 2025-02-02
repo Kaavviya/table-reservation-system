@@ -1,0 +1,89 @@
+.tables-section{
+  font-size: 6.5px;
+  display: grid;
+  grid-template-rows:repeat(3, 1fr);
+  grid-template-columns:repeat(3, 1fr);
+  padding: 30px;
+  padding-top: 40px;
+  width: 800px;
+  padding-top: 10px;
+
+}
+
+.table-area{
+  border: solid 1px rgb(74, 60, 0);
+  padding: 10px;
+}
+.table {
+    position: relative;
+    height: 12em;
+    background-color: rgb(153, 38, 38);
+    border-radius: 1em;
+    margin: 1em; 
+}
+.s4{
+  width: 25em;
+}
+
+.s2{
+  width: 12.5em;
+}
+
+.s6{
+  width: 37.5em;
+}
+
+.reserved{
+  background-color:#333;
+}
+.free{
+  background-color: rgb(174, 174, 174);
+}
+.chair {
+  position: absolute;
+  display: inline-block;
+  width: 7em;
+  height: 5.5em;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: beige;
+}
+
+.c1{
+  left: 2.5em;
+  top: -2em;
+}
+
+.c2{
+  left:  2.5em;
+  bottom: -2em;
+}
+
+.c3{
+  right: 2.5em;
+  top: -2em;
+}
+
+.c4{
+  right: 2.5em;
+  bottom: -2em;
+}
+
+.c5{
+  right: 15em;
+  top: -2em;
+}
+
+.c6{
+  right: 15em;
+  bottom: -2em;
+}
+
+.table-area{
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 10px 40px 10px;
+
+}

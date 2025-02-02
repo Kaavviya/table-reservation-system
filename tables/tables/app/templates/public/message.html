@@ -1,0 +1,23 @@
+{% extends 'public/base/base.html' %}
+
+{% block title %}Message{% endblock %}
+
+{% block main %}
+
+<style>
+    .message{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+    <div class="message">
+        {% if message %}
+        <h3>
+            {{ message }}
+        </h3>
+        {% endif %}
+    </div>
+
+{% endblock %}
