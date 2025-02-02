@@ -16,7 +16,11 @@ A hotel wants to develop a system to manage their takeaway service.
 
 DESIGN PATTERNS:
  Seat Reservation- State Pattern
+ 
  Notification- Observer Pattern, Decorator Pattern
+ 
  Manager- Singleton Pattern
+ 
  Mode of Payment- Strategy Pattern
+ 
  Cancel Reservation- Command Pattern
